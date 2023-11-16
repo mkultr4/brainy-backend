@@ -1,0 +1,16 @@
+[
+    {
+        "uid": "1",
+        "key": "member",
+        "description": "member",
+        "status": "active",
+        "deleted": false
+    },
+    {
+        "uid": "2",
+        "key": "special member",
+        "description": "special member",
+        "status": "active",
+        "deleted": false
+    }
+]

@@ -1,0 +1,24 @@
+service:
+  name: brainy-core-brief
+
+# Add the serverless-webpack plugin
+plugins:
+  - serverless-webpack
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+
+functions:
+  save:
+    handler: handler.save
+  delete:
+    handler: handler.erase
+  update:
+    handler: handler.update
+  get:
+    handler: handler.get
+  list:
+    handler: handler.list
+  page:
+    handler: handler.page

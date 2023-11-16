@@ -1,0 +1,37 @@
+# gitignore file
+
+#Java General
+bin/
+
+# Eclipse
+.classpath
+.project
+.settings/
+ 
+# Intellij
+.idea/
+*.iml
+*.iws
+ 
+# Mac
+.DS_Store
+ 
+# Maven
+log/
+target/
+dependency-reduced-pom.xml
+
+
+#node js
+node_modules
+dist
+docs
+
+#test
+.nyc_output
+coverage
+brainy/db-bin/
+
+db-bin/
+
+package-lock\.json

@@ -1,0 +1,33 @@
+[
+    {
+        "uid": "1",
+        "name": "Feedback",
+        "description": "Feedback core",
+        "active": "true"
+    },
+    {
+        "uid": "2",
+        "name": "Brief",
+        "description": "Brief core",
+        "active": "true"
+    },
+    {
+        "uid": "3",
+        "name": "Minuta",
+        "description": "Minuta core",
+        "active": "true"
+    },
+    {
+        "uid": "4",
+        "name": "Presentacion",
+        "description": "Presentacion core",
+        "active": "true"
+    },
+    {
+        "uid": "5",
+        "name": "Floatingnote",
+        "description": "Floating note core",
+        "active": "true"
+    }
+]
+

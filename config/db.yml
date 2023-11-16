@@ -1,0 +1,25 @@
+
+base:
+  DB_LOG_LEVEL: 'debug'
+  DB_PREFIX: 'br_'
+  DB_SUBFIX: '_dev'
+  DB_REGION: 'xx-xxx-x'
+  DB_LOCAL: true
+  DB_PORT: 8000
+  DB_HOST: 'http://xx.xxx.xx.xxx'
+  DB_CREATE_GENERATE: true
+  DB_UPDATE_GENERATE: true
+
+dev:
+  ~compose: [base]
+
+test:
+  ~compose: [dev]
+  DB_LOG_LEVEL: 'error'
+  DB_SUBFIX: '_test'
+  DB_REGION: 'xx-xxx-x'
+
+prod:
+  ~compose: [test]
+  DB_LOG_LEVEL: 'info'
+  DB_SUBFIX: '_prod'

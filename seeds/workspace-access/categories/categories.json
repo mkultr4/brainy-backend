@@ -1,0 +1,24 @@
+[
+  {
+      "uid":"1",
+      "name":"Agencias",
+      "workspace": "0744d7a5-2c0f-4561-9c85-f4f6465a80e1",
+      "createdBy": "3aebe604-38f4-4d87-811c-02eaa19ecd6f",
+      "updatedBy": "3aebe604-38f4-4d87-811c-02eaa19ecd6f",
+      "active": true
+  },{
+      "uid":"2",
+      "name":"Empresas",
+      "workspace": "0744d7a5-2c0f-4561-9c85-f4f6465a80e1",
+      "createdBy": "3aebe604-38f4-4d87-811c-02eaa19ecd6f",
+      "updatedBy": "3aebe604-38f4-4d87-811c-02eaa19ecd6f",
+      "active": true
+  },{
+      "uid":"3",
+      "name":"Freelancer",
+      "workspace": "0744d7a5-2c0f-4561-9c85-f4f6465a80e1",
+      "createdBy": "3aebe604-38f4-4d87-811c-02eaa19ecd6f",
+      "updatedBy": "3aebe604-38f4-4d87-811c-02eaa19ecd6f"
+  }
+]
+

@@ -1,0 +1,16 @@
+
+base:
+  SALT_ROUNDS: 10
+  JWT_EXPIRATION_TIME: '8h'
+  JWT_CONFIRMACION_EXPIRATION_TIME: '30d'
+  JWT_INVITATION_EXPIRATION_TIME: '30d'
+  JWT_EXPIRATION_REMIENDER_TIME: '30d'
+dev:
+  ~compose: [base]
+
+test:
+  ~compose: [dev]
+
+prod:
+  ~compose: [test]
+

@@ -1,0 +1,106 @@
+service:
+  name: brainy-invitations
+
+# Add the serverless-webpack plugin
+plugins:
+  - serverless-webpack
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  region: us-east-1
+  apiGateway: ${file(../../config/serverless.env.yml):${opt:stage}.apiGateway}
+  role: arn:aws:iam::970663928408:role/awsLambdaRoleFull
+  memorySize: 512 # optional, in MB, default is 1024
+  timeout: 7 #
+  stackTags:
+    APP:  "BRAINY"
+    MODULE: "INVITATIONS"
+  environment:
+      NODE_ENV: ${file(../../config/serverless.env.yml):${opt:stage}.NODE_ENV}
+
+functions:
+  get-by-id:
+    handler: handler.getById
+    events:
+      - http:
+          method: get
+          path: /invitations/{id}
+          request:
+            parameters:
+                paths:
+                  id: true
+          authorizer:
+            type: CUSTOM
+            name: authorizadorwsa
+            authorizerId: l9tp37
+          cors: true
+  batch-create:
+    handler: handler.batchCreate
+    events:
+      - http:
+          method: post
+          path: /invitations/batch-create
+          authorizer:
+            type: CUSTOM
+            name: authorizadorwsa
+            authorizerId: l9tp37
+          cors: true
+  register-invitation:
+    handler: handler.registerInvitation
+    events:
+      - http:
+          method: post
+          path: /invitations/{id}/register
+          request:
+            parameters:
+                paths:
+                  id: true
+          cors: true
+
+  cancel-invitation:
+    handler: handler.canceled
+    events:
+      - http:
+          method: put
+          path: /invitations/{id}/cancel
+          authorizer:
+            type: CUSTOM
+            name: authorizadorwsa
+            authorizerId: l9tp37
+          request:
+            parameters:
+                paths:
+                  id: true
+          cors: true
+  confirm-invitation:
+    handler: handler.confirmInvitation
+    events:
+      - http:
+          method: post
+          path: /invitations/{id}/confirm
+          request:
+            parameters:
+                paths:
+                  id: true
+          cors: true
+
+
+  # create:
+  #   handler: InvitationsFunction.create
+
+
+  # delete:
+  #   handler: InvitationsFunction.deleted
+  # update:
+  #   handler: InvitationsFunction.update
+  # get-by-id:
+  #   handler: InvitationsFunction.getById
+  # confirm:
+  #   handler: InvitationsFunction.confirm
+  # verify-if-exist:
+  #   handler: InvitationsFunction.verifyExist
+  # find-all:
+  #   handler: InvitationsFunction.findAll
+  # find-by:
+  #   handler: InvitationsFunction.findBy

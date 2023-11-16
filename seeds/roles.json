@@ -1,0 +1,33 @@
+[
+    {
+        "uid": "1",
+        "name": "Administrator",
+        "key": "Admin",
+        "description": "Administrator description"
+    },
+    {
+        "uid": "2",
+        "name": "Co-Administrador",
+        "key": "Coadmin",
+
+        "description": "Co-Administrador"
+    },
+    {
+        "uid": "3",
+        "name": "Manager",
+        "key": "manager",
+        "description": "Manager"
+    },
+    {
+        "uid": "4",
+        "name": "Team",
+        "key": "team",
+        "description": "Team"
+    },
+    {
+        "uid": "5",
+        "name": "Guest",
+        "key": "Guest",
+        "description": "Guest"
+    }
+]

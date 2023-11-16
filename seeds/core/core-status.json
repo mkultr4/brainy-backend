@@ -1,0 +1,33 @@
+[
+    {
+        "uid": "1",
+        "name": "Abierta",
+        "key": "open",
+        "ico": "assets/img/icons/status/ico_open.svg",
+        "active": "true"
+    },
+    {
+        "uid": "2",
+        "name": "En proceso",
+        "key": "process",
+        "ico": "assets/img/icons/status/ico_process.svg",
+        "active": "true"
+    },
+    {
+        "uid": "3",
+        "name": "Por aprobar",
+        "key": "to-be-approved",
+        "ico": "assets/img/icons/status/ico_to_be_approved.svg",
+        "active": "true"
+    },
+    {
+        "uid": "4",
+        "name": "Desaprobar",
+        "key": "disapproved",
+        "ico": "assets/img/icons/status/ico_disapproved.svg",
+
+        "active": "true"
+    }
+
+]
+

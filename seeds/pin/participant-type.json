@@ -1,0 +1,26 @@
+[
+    {
+        "uid":"1", 
+        "key":"all", 
+        "name":"Todos", 
+        "ico":"assets/img/icons/participants/ico_participants_all.svg"
+    },
+    {
+        "uid":"2", 
+        "key":"team", 
+        "name":"Mi equipo", 
+        "ico":"assets/img/icons/participants/ico_participants_my_team.svg"
+    },  
+    {
+        "uid":"3", 
+        "key":"private", 
+        "name":"Privados", 
+        "ico":"assets/img/icons/participants/ico_participants_private.svg"
+        },
+    {
+        "uid":"4", 
+        "key":"just-me", 
+        "name":"Solo yo", 
+        "ico":"assets/img/icons/participants/ico_participants_just_me.svg"
+    }
+]

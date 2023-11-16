@@ -1,0 +1,42 @@
+service:
+  name: brainy-pin
+
+# Add the serverless-webpack plugin
+plugins:
+  - serverless-webpack
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  region: us-east-1
+  role: arn:aws:iam::970663928408:role/awsLambdaRoleFull
+  memorySize: 512 # optional, in MB, default is 1024
+  timeout: 12 #
+  stackTags:
+    APP:  "BRAINY"
+    MODULE: "PIN"
+  environment:
+      NODE_ENV: ${file(./serverless.env.yml):${opt:stage}.NODE_ENV}
+
+
+functions:
+  get-by-id:
+    handler: handler.getById
+    tags:
+      action: GET
+  delete:
+    handler: handler.deleted
+    tags:
+      action: DELETE
+  create:
+    handler: handler.create
+    tags:
+      action: POST
+  update:
+    handler: handler.update
+    tags:
+      action: PUT
+  find-by-reference:
+    handler: handler.findByReference
+    tags:
+      action: GET

@@ -1,0 +1,12 @@
+[
+  {
+    "uid": "0744d7a5-2c0f-4561-9c85-f4f6465a80e1",
+    "createdAt": 1531513923591,
+    "deleted": false,
+    "owner_id": "3aebe604-38f4-4d87-811c-02eaa19ecd6f",
+    "name": "My Workspace",
+    "active": true,
+    "config": "{\"thumbnail\":\"https://s3.amazonaws.com/brainy-img/img/home/logo_brainy.png\",\"backgroundColor\":\"#18191A\"}",
+    "updatedAt": 1531513923591
+  }
+]

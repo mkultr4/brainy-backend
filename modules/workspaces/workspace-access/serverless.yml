@@ -1,0 +1,113 @@
+
+service:
+  name: brainy-workspace-access
+
+# Add the serverless-webpack plugin
+plugins:
+  - serverless-webpack
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  region: us-east-1
+  apiGateway: ${file(../../../config/serverless.env.yml):${opt:stage}.apiGateway}
+  role: arn:aws:iam::970663928408:role/awsLambdaRoleFull
+  memorySize: 512 # optional, in MB, default is 1024
+  timeout: 7 #
+  stackTags:
+    APP:  "BRAINY"
+    MODULE: "WORKSPACES"
+  environment:
+      NODE_ENV: ${file(../../../config/serverless.env.yml):${opt:stage}.NODE_ENV}
+
+functions:
+  get:
+    handler: handler.get
+    tags:
+      action: GET
+    events:
+      - http:
+          method: get
+          path: /workspaces-access/{id}
+          request:
+            parameters:
+                paths:
+                  id: true
+          cors: true
+  changeStatus:
+    handler: handler.changeStatus
+    tags:
+      action: PATCH
+    events:
+      - http:
+          method: patch
+          path: /workspaces-access/{id}/status
+          request:
+            parameters:
+                paths:
+                  id: true
+          authorizer:
+            type: CUSTOM
+            name: authorizadorwsa
+            authorizerId: l9tp37
+          cors: true
+  removeAccess:
+    handler: handler.removeAccess
+    tags:
+      action: DELETE
+    events:
+      - http:
+          method: delete
+          path: /workspaces-access/{id}
+          request:
+            parameters:
+                paths:
+                  id: true
+          authorizer:
+            type: CUSTOM
+            name: authorizadorwsa
+            authorizerId: l9tp37
+          cors: true
+  getByUser:
+    handler: handler.getByUser
+    memorySize: 1024
+    tags:
+      action: GET
+    events:
+      - http:
+          method: get
+          path: /workspaces-access
+          authorizer:
+            type: CUSTOM
+            name: authorizer
+            authorizerId: bh5l1b
+          cors: true
+  getByWorkspace:
+    handler: handler.getByWorkspace
+    memorySize: 1024
+    tags:
+      action: GET
+    events:
+      - http:
+          method: get
+          path: /workspaces-access/members
+          authorizer:
+            type: CUSTOM
+            name: authorizadorwsa
+            authorizerId: l9tp37
+          cors: true
+  getSession:
+    handler: handler.getSession
+    tags:
+      action: GET
+    events:
+      - http:
+          method: get
+          path: /workspaces-access/session/{id}
+          authorizer:
+            type: CUSTOM
+            name: authorizer
+            authorizerId: bh5l1b
+          cors: true
+  authorizerWS:
+    handler: handler.authorizerWS
